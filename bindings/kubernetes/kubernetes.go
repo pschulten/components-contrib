@@ -54,7 +54,7 @@ func (k *kubernetesInput) Init(metadata bindings.Metadata) error {
 }
 
 func (k *kubernetesInput) parseMetadata(metadata bindings.Metadata) error {
-	if val, ok := metadata.Properties["namespace"]; ok && val != "" {
+	if val, ok := metadata.Properties["namespace"]; ok {
 		k.namespace = val
 	} else {
 		return errors.New("namespace is missing in metadata")
